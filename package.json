@@ -4,7 +4,7 @@
   "description": "API desenvolvida para o desafio final Explorer",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node ./src/server.js"
   },
   "keywords": [],
   "author": "Caio Balduino Rafachino",
