@@ -1,9 +1,10 @@
-require('express-async-errors');
-
+require("express-async-errors");
+const migrationsRun = require("../src/database/sqlite/migrations");
 const AppError = require("./utils/AppError.js");
 const express = require("express");
 
 const routes = require("./routes");
+migrationsRun();
 
 const app = express();
 app.use(express.json());
@@ -27,5 +28,5 @@ app.use((error, request, response, next) => {
 const PORT = 3333;
 
 app.listen(PORT, () => {
- console.log(`Listen on Port ${PORT}`)
+  console.log(`Listen on Port ${PORT}`);
 });
