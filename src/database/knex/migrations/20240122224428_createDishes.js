@@ -1,6 +1,6 @@
-
 exports.up = knex => knex.schema.createTable("dishes", table => {
-  table.increments("id").primary()
+  table.increments("id")
+  table.integer("user_id").references("id").inTable("users");
   table.string('name')
   table.string('description')
   table.string('image')
@@ -9,5 +9,4 @@ exports.up = knex => knex.schema.createTable("dishes", table => {
   table.datetime('created_at').defaultTo(knex.fn.now())
   table.datetime('updated_at').defaultTo(knex.fn.now())
 });
-
 exports.down = knex => knex.schema.dropTable("dishes");
