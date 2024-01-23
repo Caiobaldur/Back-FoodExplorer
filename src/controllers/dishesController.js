@@ -37,6 +37,14 @@ class DishesController {
 
     return res.json({...dishes, ingredients})
   }
+
+  async delete (req, res) {
+    const { id } = req.params;
+
+    await knex("dishes").where({id}).delete()
+
+    return res.json();
+  }
 }
 
 module.exports = DishesController;
